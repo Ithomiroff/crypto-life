@@ -1,0 +1,92 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "eslint-plugin-import-helpers",
+    "import",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "curly": "error",
+    "no-console": "warn",
+    "react/prop-types": 0,
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      2,
+      {
+        "maximum": 1,
+        "when": "always"
+      }
+    ],
+    "react/jsx-first-prop-new-line": [
+      2,
+      "multiline-multiprop"
+    ],
+    "react/jsx-indent-props": [
+      2,
+      2
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "never"
+      }
+    ],
+    "react/jsx-boolean-value": "error",
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          "/^@src/",
+          "/^@api/",
+          "/^@services/",
+          "/^@hooks/",
+          "/^@components/",
+          "/^@utils/",
+          "/^@assets/"
+        ]
+      }
+    ],
+    "func-style": [
+      "error",
+      "expression"
+    ],
+    "no-useless-rename": "error",
+    "import/no-duplicates": "warn",
+    "import/exports-last": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": [
+    "config-overrides.js",
+    "index.html"
+  ]
+}
