@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 
-import { AppLayout } from './layouts/AppLayout';
+import { AppLayout } from './layouts/AppLayout/AppLayout';
 import { AdminLayout } from './layouts/AdminLayout';
 import { News } from './components/News/News';
 
