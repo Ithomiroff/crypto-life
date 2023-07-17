@@ -3,6 +3,8 @@ import { Navigate } from 'react-router-dom';
 import { AppLayout } from './layouts/AppLayout/AppLayout';
 import { AdminLayout } from './layouts/AdminLayout';
 import { News } from './components/News/News';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
+import { Profile } from './components/Profile/Profile';
 
 const APP_ROUTES = [
   {
@@ -13,11 +15,23 @@ const APP_ROUTES = [
         path: 'news',
         element: <News />,
       },
+      {
+        path: 'profile',
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
     path: 'admin',
-    element: <AdminLayout />,
+    element: (
+      <PrivateRoute>
+        <PrivateRoute />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: 'news',
