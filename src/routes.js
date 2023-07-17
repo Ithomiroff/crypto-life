@@ -17,11 +17,7 @@ const APP_ROUTES = [
       },
       {
         path: 'profile',
-        element: (
-          <PrivateRoute>
-            <Profile />
-          </PrivateRoute>
-        ),
+        element: <Profile />,
       },
     ],
   },
