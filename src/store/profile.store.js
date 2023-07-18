@@ -15,6 +15,9 @@ const store = makeAutoObservable({
       store.loading = false;
     }
   },
+  setUser(value) {
+    store.user = value;
+  },
 });
 
 export { store as profileStore };

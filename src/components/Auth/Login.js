@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import { useFormik } from 'formik';
 import { observer } from 'mobx-react-lite';
@@ -6,6 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { Button, Input } from '../../styled/Global';
 import { Controls, Fields, Form, FormTitle, Info } from './styled';
 import { authStore } from '../../store/auth.store';
+import { profileStore } from '../../store/profile.store';
 
 const Login = observer(() => {
   const formik = useFormik({
@@ -17,6 +19,15 @@ const Login = observer(() => {
       authStore.loginUser(body);
     },
   });
+
+  if (profileStore.user) {
+    return (
+      <NavLink
+        to="/app/profile"
+        replace
+      />
+    );
+  }
 
   return (
     <Form onSubmit={formik.handleSubmit}>

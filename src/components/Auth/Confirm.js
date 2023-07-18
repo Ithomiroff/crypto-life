@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import { useFormik } from 'formik';
 import { observer } from 'mobx-react-lite';
@@ -6,6 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { Button, Input } from '../../styled/Global';
 import { Controls, Fields, Form, FormRoot, FormTitle } from './styled';
 import { authStore } from '../../store/auth.store';
+import { profileStore } from '../../store/profile.store';
 
 const Confirm = observer(() => {
   const formik = useFormik({
@@ -23,6 +25,15 @@ const Confirm = observer(() => {
       authStore.setConfirmLink(null);
     };
   }, []);
+
+  if (!authStore.confirmLink || authStore.confirmed) {
+    return (
+      <Navigate
+        to="/app/profile"
+        replace
+      />
+    );
+  }
 
   return (
     <FormRoot>

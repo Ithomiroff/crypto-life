@@ -1,9 +1,11 @@
 import { makeAutoObservable } from 'mobx';
 
 import { confirmUser, loginUser, registerUser, restorePasswordUser } from '../api/endpoints/auth';
+import { profileStore } from './profile.store';
 
 const store = makeAutoObservable({
   loading: false,
+  confirmed: false,
   confirmLink: null,
   setConfirmLink(value) {
     store.confirmLink = value;
@@ -12,7 +14,8 @@ const store = makeAutoObservable({
     try {
       store.loading = true;
 
-      const user = await loginUser(body);
+      const { user } = await loginUser(body);
+      profileStore.setUser(user);
     } catch (err) {
     } finally {
       store.loading = false;
@@ -42,7 +45,8 @@ const store = makeAutoObservable({
   async confirmAccount(url) {
     try {
       store.loading = true;
-      confirmUser(url);
+      await confirmUser(url);
+      store.confirmed = true;
     } catch (err) {
     } finally {
       store.loading = false;
