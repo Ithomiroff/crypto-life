@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
-export const Root = styled.header`
+export const Root = styled.section`
   padding: 60px 0;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
 
-export const Inner = styled.header`
+export const Inner = styled.div`
   padding: 125px 0 0;
   display: flex;
   align-items: center;

@@ -1,4 +1,12 @@
+import { NavLink as RouterLink } from 'react-router-dom';
+
 import styled from 'styled-components';
+
+export const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
 export const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.light};
@@ -19,10 +27,11 @@ export const Nav = styled.ul`
   gap: 40px;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(RouterLink)`
   display: flex;
   gap: 15px;
   align-items: center;
+  text-decoration: none;
   color: ${({ theme }) => theme.colors.primary};
 `;
 

@@ -5,6 +5,9 @@ import { AdminLayout } from './layouts/AdminLayout';
 import { News } from './components/News/News';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { Profile } from './components/Profile/Profile';
+import { SignUp } from './components/Auth/SignUp';
+import { Recovery } from './components/Auth/Recovery';
+import { Confirm } from './components/Auth/Confirm';
 
 const APP_ROUTES = [
   {
@@ -18,6 +21,18 @@ const APP_ROUTES = [
       {
         path: 'profile',
         element: <Profile />,
+      },
+      {
+        path: 'sign-up',
+        element: <SignUp />,
+      },
+      {
+        path: 'recovery',
+        element: <Recovery />,
+      },
+      {
+        path: 'confirm',
+        element: <Confirm />,
       },
     ],
   },

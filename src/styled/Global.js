@@ -21,12 +21,15 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
   html {
-    min-height: 100%;
+    height: 100%;
   }
   body {
     height: 100%;
     font-size: 14px;
     background-color: ${({ theme }) => theme.colors.bg};
+  }
+  #root {
+    height: 100%;
   }
 `;
 
@@ -37,7 +40,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 15px 50px;
+  padding: 15px 30px;
   background-color: ${({ theme, $color }) => theme.colors[$color]};
   color: ${({ theme }) => theme.colors.light};
   border-radius: 15px;
@@ -45,4 +48,23 @@ export const Button = styled.button`
   border: none;
   font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+  width: ${({ $full }) => ($full ? '100%' : 'auto')};
+`;
+
+export const Input = styled.input`
+  height: 47px;
+  width: 100%;
+  padding: 0 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.03);
+  background-color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.darkGray};
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.gray};
+  }
 `;

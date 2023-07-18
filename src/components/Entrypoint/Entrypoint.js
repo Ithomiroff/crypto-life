@@ -7,7 +7,7 @@ const Entrypoint = ({ children }) => {
     profileStore.fetchProfile();
   }, []);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 export { Entrypoint };

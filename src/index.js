@@ -10,12 +10,10 @@ import { APP_THEME, GlobalStyle } from './styled/Global';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={APP_THEME}>
-        <GlobalStyle />
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <ThemeProvider theme={APP_THEME}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
 );
