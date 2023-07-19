@@ -8,6 +8,7 @@ import { Profile } from './components/Profile/Profile';
 import { SignUp } from './components/Auth/SignUp';
 import { Recovery } from './components/Auth/Recovery';
 import { Confirm } from './components/Auth/Confirm';
+import { Seminars } from './components/Seminars/Seminars';
 
 const APP_ROUTES = [
   {
@@ -17,6 +18,10 @@ const APP_ROUTES = [
       {
         path: 'news',
         element: <News />,
+      },
+      {
+        path: 'seminars',
+        element: <Seminars />,
       },
       {
         path: 'profile',
@@ -47,6 +52,10 @@ const APP_ROUTES = [
       {
         path: 'news',
         element: <News admin />,
+      },
+      {
+        path: 'seminars',
+        element: <Seminars admin />,
       },
     ],
   },
