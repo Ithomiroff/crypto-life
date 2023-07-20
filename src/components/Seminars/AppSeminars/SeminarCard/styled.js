@@ -80,6 +80,16 @@ export const BottomBlock = styled.div`
   margin: auto 0 0;
 `;
 
+export const ClockSvg = styled.div`
+  width: 15px;
+  height: 15px;
+  color: ${({ theme }) => theme.colors.primary};
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 export const DetailItem = styled.li`
   display: flex;
   flex-direction: column;

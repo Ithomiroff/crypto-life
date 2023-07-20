@@ -15,8 +15,11 @@ const AppSignals = observer(() => {
   return (
     <Container>
       <Root>
-        {signalsStore.signals.map(({ id }) => (
-          <SignalCard key={id} />
+        {signalsStore.signals.map((signal) => (
+          <SignalCard
+            {...signal}
+            key={signal.id}
+          />
         ))}
       </Root>
     </Container>

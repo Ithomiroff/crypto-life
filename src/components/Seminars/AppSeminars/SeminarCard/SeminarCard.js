@@ -4,6 +4,7 @@ import {
   Banner,
   BottomBlock,
   Card,
+  ClockSvg,
   Content,
   Description,
   Detail,
@@ -30,7 +31,9 @@ const SeminarCard = ({ imageUrl, title, seats, date, description, id, onHold }) 
             <span>{formatDate.toFormat('d LLL yyyy')}</span>
           </Param>
           <Param>
-            <Clock />
+            <ClockSvg>
+              <Clock />
+            </ClockSvg>
             <span>{formatDate.toFormat('HH:mm')}</span>
           </Param>
           <Param>
