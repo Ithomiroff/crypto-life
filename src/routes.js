@@ -1,7 +1,6 @@
 import { Navigate } from 'react-router-dom';
 
 import { AppLayout } from './layouts/AppLayout/AppLayout';
-import { AdminLayout } from './layouts/AdminLayout';
 import { News } from './components/News/News';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import { Profile } from './components/Profile/Profile';
@@ -9,6 +8,7 @@ import { SignUp } from './components/Auth/SignUp';
 import { Recovery } from './components/Auth/Recovery';
 import { Confirm } from './components/Auth/Confirm';
 import { Seminars } from './components/Seminars/Seminars';
+import { Signals } from './components/Signals/Signals';
 
 const APP_ROUTES = [
   {
@@ -22,6 +22,10 @@ const APP_ROUTES = [
       {
         path: 'seminars',
         element: <Seminars />,
+      },
+      {
+        path: 'signals',
+        element: <Signals />,
       },
       {
         path: 'profile',
@@ -56,6 +60,10 @@ const APP_ROUTES = [
       {
         path: 'seminars',
         element: <Seminars admin />,
+      },
+      {
+        path: 'signals',
+        element: <Signals admin />,
       },
     ],
   },

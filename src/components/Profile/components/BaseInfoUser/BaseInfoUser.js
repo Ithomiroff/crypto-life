@@ -1,10 +1,15 @@
-import { observer } from 'mobx-react-lite';
-
-import { profileStore } from '../../../../store/profile.store';
 import { Avatar, Name, Root } from './styled';
+import { AccountsList } from '../AccountsList/AccountsList';
+
+const TYPES = {
+  none: 'Базовый аккаунт',
+  signals: 'Трейдер',
+  investments: 'Инвестор',
+  fullpackage: 'PRO',
+};
 
 const BaseInfoUser = ({ user }) => {
-  const { firstName, lastName, role, avatarUrl } = user;
+  const { firstName, lastName, avatarUrl, subscription } = user;
 
   return (
     <Root>
@@ -26,8 +31,10 @@ const BaseInfoUser = ({ user }) => {
           {firstName} {lastName}
         </h2>{' '}
         <br />
-        <span>{role === 'admin' ? 'Администратор' : 'Базовый аккаунт'}</span>
+        <span>{TYPES[subscription]}</span>
       </Name>
+
+      <AccountsList />
     </Root>
   );
 };

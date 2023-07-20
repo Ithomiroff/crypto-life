@@ -33,6 +33,11 @@ export const LogoWrapper = styled(RouterLink)`
   align-items: center;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.primary};
+
+  svg {
+    width: 45px;
+    height: 50px;
+  }
 `;
 
 export const LogoText = styled.ul`
