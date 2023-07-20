@@ -3,17 +3,17 @@ import { useCallback, useEffect, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 
 const useWavesurfer = (options) => {
-  const [wavesurfer, setWavesurfer] = useState(null);
+  const [wv, setWv] = useState(null);
 
   useEffect(() => {
     return () => {
-      wavesurfer && wavesurfer.destroy();
+      wv && wv.destroy();
     };
-  }, [wavesurfer]);
+  }, [wv]);
 
-  const setRef = useCallback(
+  const create = useCallback(
     (container) => {
-      const ws = WaveSurfer.create({
+      const wave = WaveSurfer.create({
         ...options,
         progressColor: 'rgb(106, 27, 154)',
         waveColor: 'rgba(212, 222, 230)',
@@ -24,15 +24,14 @@ const useWavesurfer = (options) => {
         url: 'https://download.samplelib.com/wav/sample-15s.wav',
         container,
       });
-
-      setWavesurfer(ws);
+      setWv(wave);
     },
     [options],
   );
 
   return {
-    wavesurfer,
-    setRef,
+    create,
+    wv,
   };
 };
 
