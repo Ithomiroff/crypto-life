@@ -14,6 +14,7 @@ export const Header = styled.header`
   box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.03);
   position: sticky;
   top: 0;
+  width: 100%;
 `;
 
 export const Inner = styled.header`
@@ -24,7 +25,8 @@ export const Inner = styled.header`
 
 export const Nav = styled.ul`
   display: flex;
-  gap: 40px;
+  flex-direction: ${({ $admin }) => ($admin ? 'column' : 'row')};
+  gap: ${({ $admin }) => ($admin ? '30px' : '40px')};
 `;
 
 export const LogoWrapper = styled(RouterLink)`

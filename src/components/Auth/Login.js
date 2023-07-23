@@ -21,9 +21,10 @@ const Login = observer(() => {
   });
 
   if (profileStore.user) {
+    console.log(profileStore.user?.role);
     return (
       <NavLink
-        to="/app/profile"
+        to={profileStore.user?.role === 'admin' ? '/admin/news' : '/app/profile'}
         replace
       />
     );

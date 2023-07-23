@@ -3,7 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { Header, Inner, Layout, LogoText, LogoWrapper, Nav, NavLink as StyledLink } from './styled';
 import { Container } from '../../styled/Global';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-import { MENU_CONFIG } from './menu.config';
+import { MENU_CONFIG } from '../menu.config';
 
 const AppLayout = () => {
   return (

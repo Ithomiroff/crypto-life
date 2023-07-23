@@ -7,14 +7,11 @@ import { profileStore } from '../../store/profile.store';
 const PrivateRoute = observer(({ children }) => {
   const location = useLocation();
 
-  const isPrivate =
-    location.pathname.indexOf('/admin') >= 0 || location.pathname.indexOf('/profile') > 0;
-
   if (profileStore.loading) {
     return null;
   }
 
-  if (!profileStore.user && isPrivate) {
+  if (profileStore.user?.role !== 'admin') {
     return (
       <Navigate
         to="/app/news"

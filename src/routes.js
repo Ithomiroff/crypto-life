@@ -9,6 +9,7 @@ import { Recovery } from './components/Auth/Recovery';
 import { Confirm } from './components/Auth/Confirm';
 import { Seminars } from './components/Seminars/Seminars';
 import { Signals } from './components/Signals/Signals';
+import { AdminLayout } from './layouts/AdminLayout/AdminLayout';
 
 const APP_ROUTES = [
   {
@@ -49,7 +50,7 @@ const APP_ROUTES = [
     path: 'admin',
     element: (
       <PrivateRoute>
-        <PrivateRoute />
+        <AdminLayout />
       </PrivateRoute>
     ),
     children: [

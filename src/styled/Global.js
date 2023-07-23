@@ -24,7 +24,6 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
   body {
-    height: 100%;
     font-size: 14px;
     background-color: ${({ theme }) => theme.colors.bg};
   }
